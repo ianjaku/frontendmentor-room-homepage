@@ -1,0 +1,9 @@
+body {
+  font-family: $font;
+  font-size: 12px;
+
+  // @include screen-from('tablet-wide') {
+  //   overflow: hidden;
+  //   height: 100%;
+  // }
+}

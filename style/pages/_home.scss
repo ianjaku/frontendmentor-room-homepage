@@ -1,0 +1,12 @@
+
+.main {
+
+  @include screen-from('tablet-wide') {
+    display: grid;
+    height: 100vh;
+    min-height: 570px;
+    max-height: 100vh;
+    grid-template-rows: 63% auto;
+  }
+  
+}

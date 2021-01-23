@@ -1,0 +1,29 @@
+
+$color-gray: hsl(0, 0%, 63%);
+$color-black: hsl(0, 0%, 0%);
+$color-white: hsl(0, 0%, 100%);
+$color-dark-gray: hsl(0, 0%, 27%);
+
+$font: "Spartan", sans-serif;
+
+$breakpoints: (
+	"mobile":       375px,
+	"mobile-wide":  480px,
+	"tablet":       768px,
+	"tablet-wide":  1024px,
+	"desktop":      1440px,
+);
+
+@mixin screen-from($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+
+  
