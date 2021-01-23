@@ -5,8 +5,9 @@ let sliding = false;
 let nextInterval = null;
 
 function createInterval() {
-  nextInterval = setInterval(showNextImage, 2000)
+  nextInterval = setInterval(showNextImage, 5000)
 }
+createInterval();
 
 function clearInterv() {
   if (nextInterval == null) return;
