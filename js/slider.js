@@ -1,5 +1,15 @@
+import heroContent from "./hero_content";
 
 const imgEls = document.querySelectorAll(".hero__img");
+const heroContentEl = document.querySelector(".hero__content");
+const heroTitleEl = heroContentEl.querySelector(".hero__title");
+const heroTextEl = heroContentEl.querySelector(".hero__text");
+
+const activeClass = `hero__img--active`;
+const hideContentClass = `hero__content--fade-out`;
+const showContentClass = `hero__content--fade-in`;
+
+
 let currentIndex = 0;
 let sliding = false;
 let nextInterval = null;
@@ -25,9 +35,9 @@ function showImageWithIndex(newIndex, direction) {
   const nextImage = imgEls[newIndex];
 
   const enterClass = `hero__img--enter-${direction}`;
-  const activeClass = `hero__img--active`;
 
   nextImage.classList.add(enterClass);
+  setContentForIndex(newIndex);
 
   setTimeout(() => {
     nextImage.classList.remove(enterClass);
@@ -38,6 +48,18 @@ function showImageWithIndex(newIndex, direction) {
   }, 500);
 
   currentIndex = newIndex;
+}
+
+function setContentForIndex(index) {
+  const content = heroContent[index];
+  heroContentEl.classList.remove(showContentClass);
+  heroContentEl.classList.add(hideContentClass);
+  setTimeout(() => {
+    heroTitleEl.innerHTML = content.title;
+    heroTextEl.innerHTML = content.text;
+    heroContentEl.classList.remove(hideContentClass);
+    heroContentEl.classList.add(showContentClass);
+  }, 250);
 }
 
 function showNextImage() {

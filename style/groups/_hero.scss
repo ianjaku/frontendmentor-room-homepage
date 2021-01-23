@@ -130,6 +130,7 @@
   padding-bottom: 70px;
   position: relative;
   background-color: white;
+  overflow: hidden;
 
   @include screen-from('tablet-wide') {
     padding-top: 20px;
@@ -144,7 +145,49 @@
     margin-bottom: 100px;
     margin-top: 50px;
   }
+
+  &--fade-out {
+    animation: fadeOut 0.25s forwards;
+  }
+
+  &--fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// .hero__content-item {
+//   visibility: hidden;
+//   display: none;
+//   // position: absolute;
+//   // width: 100%;
+//   // transform: translateX(20%);
+
+//   &--active {
+//     display: block;
+//     visibility: visible;
+//   }
+// }
 
 .hero__title {
   font-family: $font;
