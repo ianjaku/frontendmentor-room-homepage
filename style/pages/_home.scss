@@ -1,6 +1,5 @@
 
 .main {
-
   @include screen-from('tablet-wide') {
     display: grid;
     height: 100vh;
@@ -8,5 +7,4 @@
     max-height: 100vh;
     grid-template-rows: 63% auto;
   }
-  
 }
