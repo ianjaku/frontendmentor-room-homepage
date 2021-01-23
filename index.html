@@ -48,15 +48,33 @@
   <main class="main">
     <div class="hero">
       <div class="hero__slider">
-        <div class="hero__img"></div>
+        <!-- <div class="hero__img"></div> -->
+        <div class="hero__img-wrapper">
+          <img
+            class="hero__img hero__img--active"
+            src="images/desktop-image-hero-1.jpg"
+            srcset="images/mobile-image-hero-1.jpg 375w,
+                    images/desktop-image-hero-1.jpg 840w"
+            sizes="(max-width: 480px) 375px,
+                  840px"
+          >
+          <img
+            class="hero__img"
+            src="images/desktop-image-hero-2.jpg"
+            srcset="images/mobile-image-hero-2.jpg 375w,
+                    images/desktop-image-hero-2.jpg 840w"
+            sizes="(max-width: 480px) 375px,
+                  840px"
+          >
+        </div>
         <div class="hero__nav">
-          <button class="hero__button">
+          <button class="hero__button hero__button--prev">
             <div
               class="hero__button-icon hero__button-icon--prev"
               style="background-image: url('images/icon-angle-left.svg')"
             ></div>
           </button>
-          <button class="hero__button">
+          <button class="hero__button hero__button--next">
             <div
               class="hero__button-icon hero__button-icon--next"
               style="background-image: url('images/icon-angle-right.svg')"
