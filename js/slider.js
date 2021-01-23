@@ -1,3 +1,4 @@
+import Hammer from "hammerjs";
 import heroContent from "./hero_content";
 
 const imgEls = document.querySelectorAll(".hero__img");
@@ -89,3 +90,14 @@ const nextButtonEl = document.querySelector(".hero__button--next");
 
 prevButtonEl.addEventListener("click", showPrevImage);
 nextButtonEl.addEventListener("click", showNextImage);
+
+
+const heroEl = document.querySelector(".hero");
+const mc = new Hammer.Manager(heroEl);
+mc.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_HORIZONTAL }));
+mc.on("swiperight", e => {
+  showPrevImage();
+})
+mc.on("swipeleft", e => {
+  showNextImage();
+})

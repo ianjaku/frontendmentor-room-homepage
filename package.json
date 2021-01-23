@@ -6,5 +6,8 @@
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8"
   }
 }
