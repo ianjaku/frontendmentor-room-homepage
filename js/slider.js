@@ -87,10 +87,8 @@ function prevIndex() {
 
 const prevButtonEl = document.querySelector(".hero__button--prev");
 const nextButtonEl = document.querySelector(".hero__button--next");
-
 prevButtonEl.addEventListener("click", showPrevImage);
 nextButtonEl.addEventListener("click", showNextImage);
-
 
 const heroEl = document.querySelector(".hero");
 const mc = new Hammer.Manager(heroEl);
